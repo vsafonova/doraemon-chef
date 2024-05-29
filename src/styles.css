@@ -1,6 +1,7 @@
 body {
   font-family: 'DM Sans', sans-serif;
-  overflow: hidden;
+  /* overflow: hidden; */
+  overflow-x: hidden;
   margin: 0;
   padding: 0;
 }
@@ -31,11 +32,13 @@ body {
 
 .section{
   display: flex;
-  width: 100vw;
+   width: 100vw;
   height: 100vh;
   align-items: center;
   margin-left: 40px;
+  
 }
+
 
 h1{
   font-size: 14rem;
@@ -61,10 +64,10 @@ h1{
 #webgi-canvas-container{
   width: 100vw;
   height: 100vh;
- /* pointer-events: none;
    position: fixed;
   display: flex;
+  pointer-events: none;
   justify-content: flex-end;
   flex-direction: column;
-  align-items: center; */
+  align-items: center; 
 }
