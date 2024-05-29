@@ -1,9 +1,37 @@
+@font-face {
+  font-family: "almostJapanese";
+  src: url(/assets/fonts/almostJapanese.ttf);
+}
+
+@font-face {
+  font-family: "catCafe";
+  src: url(/assets/fonts/catcafe.ttf);
+}
+
 body {
   font-family: 'DM Sans', sans-serif;
   /* overflow: hidden; */
   overflow-x: hidden;
   margin: 0;
   padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+ font-family: "almostJapanese";
+}
+
+h2 {
+  font-size: 6rem;
+}
+
+p {
+  font-family: "catCafe";
+  font-size: 1.5rem;
 }
 
 .nav--bar {
@@ -31,20 +59,24 @@ body {
 }
 
 .section {
-  display: flex;
   width: 100vw;
   height: 100vh;
-  align-items: center;
   padding-left: 40px;
   padding-right: 40px;
 }
 
 .bg_yellow {
   background-color: #ffec2d;
+  display: flex;
+  align-items: center;
 }
 
 .bg_white {
   background-color: #fff;
+}
+
+.bg_white p {
+  width: 40%;
 }
 
 .bg_orange {
