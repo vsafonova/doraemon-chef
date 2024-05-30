@@ -20,6 +20,7 @@ import "./styles.css";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 // import Lenis from '@studio-freight/lenis'
+
 gsap.registerPlugin(ScrollTrigger);
 
 async function setupViewer() {
@@ -46,7 +47,7 @@ async function setupViewer() {
   await manager.addFromPath("./assets/scene.glb");
 
   const soundEl = new Audio("./assets/yoo.mp3")
-let soundOn = false
+
   function setupScrollanimation() {
     const tl = gsap.timeline();
 
@@ -196,10 +197,6 @@ let soundOn = false
   }
 
   function playSound(){
-    if (!soundOn) {
-      console.log("sound would be played but muted")
-      return
-    }
     console.log("sound will be played")
     soundEl.play()
 }
