@@ -1,15 +1,15 @@
 @font-face {
-  font-family: 'almostJapanese';
+  font-family: "almostJapanese";
   src: url(/assets/fonts/almostJapanese.ttf);
 }
 
 @font-face {
-  font-family: 'catCafe';
+  font-family: "catCafe";
   src: url(/assets/fonts/catcafe.ttf);
 }
 
 body {
-  font-family: 'DM Sans', sans-serif;
+  font-family: "DM Sans", sans-serif;
   overflow-x: hidden;
   margin: 0;
   padding: 0;
@@ -29,7 +29,7 @@ h2 {
 }
 
 p {
-  font-family: 'catCafe';
+  font-family: "catCafe";
   margin: 0;
   /* font-size: 1.5rem; */
 }
@@ -90,9 +90,9 @@ p {
   grid-template-rows: 1fr 1fr;
   gap: 10px;
   margin-top: 50px;
- border-left: black solid 2px;
- padding-left: 30px;
- font-weight: 900;
+  border-left: black solid 2px;
+  padding-left: 30px;
+  font-weight: 900;
 }
 
 .bg_yellow {
@@ -114,7 +114,7 @@ p {
 }
 
 h1 {
-  font-size: 14rem;
+  font-size: 14rem; 
   line-height: 12rem;
   letter-spacing: -0.3rem;
   width: 50%;
@@ -127,7 +127,7 @@ h1 {
 } */
 
 .best_text_container {
-  display:block;
+  display: block;
 }
 
 #webgi-canvas {
@@ -135,6 +135,19 @@ h1 {
   height: 100%;
   position: fixed;
   top: 0;
+}
+
+.slider {
+  display: flex;
+  justify-content: space-between;
+  width: 50vw;
+  margin: 1rem;
+  padding: 1rem;
+  border-radius: 10px;
+}
+
+.best_slider_text {
+  display: block;
 }
 
 #webgi-canvas-container {
