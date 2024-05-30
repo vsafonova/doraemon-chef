@@ -145,6 +145,7 @@ body {
 
 h1 {
   font-size: 14rem;
+  font-size: 14rem;
   line-height: 12rem;
   letter-spacing: -0.3rem;
   width: 50%;
@@ -191,12 +192,6 @@ h1 {
   align-items: center;
 }
 /* -------------------------------- */
-#container,
-.fourth {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
 
 section .fourth {
   display: grid;
@@ -217,4 +212,29 @@ section .fourth {
 .char {
   transform: translateY(580px);
   transition: transform 0.5s;
+}
+
+.footer {
+  width: 100%;
+  padding: 2rem;
+  font-size: 2rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+.footer__container {
+  width: 1000px;
+  margin: 0 auto;
+}
+.container-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.text-center {
+  text-align: center;
+}
+.footer__small-text {
+  width: 500px;
+  font-weight: 200;
+  font-size: 0.5rem;
 }
