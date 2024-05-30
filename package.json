@@ -39,6 +39,8 @@
   "dependencies": {
     "@studio-freight/lenis": "^0.2.28",
     "gsap": "^3.12.5",
+    "scrollmagic": "^2.0.8",
+    "split-type": "^0.3.4",
     "vercel": "^28.4.5"
   }
 }
