@@ -184,7 +184,7 @@ let soundOn = false
     const ease = "back.out";
     bestTl
       .from(".best_slider-one", {
-        x: -1 * 810,
+        x: -1 * 1300,
         duration,
         ease,
         onStart: () => {
@@ -192,7 +192,7 @@ let soundOn = false
         },
       })
       .from(".best_slider-two", { x: window.innerWidth, duration, delay, ease })
-      .from(".best_slider-three", { x: -1 * 810, duration, delay, ease });
+      .from(".best_slider-three", { x: -1 * 1300, duration, delay, ease });
   }
 
   function playSound(){
