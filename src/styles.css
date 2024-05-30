@@ -115,6 +115,7 @@ p {
 
 h1 {
   font-size: 14rem;
+  font-size: 14rem;
   line-height: 12rem;
   letter-spacing: -0.3rem;
   width: 50%;
@@ -159,6 +160,34 @@ h1 {
   justify-content: flex-end;
   flex-direction: column;
   align-items: center;
+}
+/* -------------------------------- */
+#container,
+.fourth {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+section .fourth {
+  display: grid;
+  place-content: center;
+  height: 100vh;
+}
+
+#text {
+  margin: 0 auto;
+  width: 800px;
+  font-size: 7rem;
+  text-transform: uppercase;
+
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  line-height: 5.9rem;
+}
+
+.char {
+  transform: translateY(580px);
+  transition: transform 0.5s;
 }
 
 .footer {
