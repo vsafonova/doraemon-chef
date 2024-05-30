@@ -154,6 +154,7 @@ h1 {
 
 .best_slider_text {
   display: block;
+  width: 35%;
 }
 
 #webgi-canvas-container {
