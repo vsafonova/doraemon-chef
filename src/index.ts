@@ -46,6 +46,8 @@ async function setupViewer() {
 
   await manager.addFromPath("./assets/scene.glb");
 
+  const soundEl = new Audio("./assets/yoo.mp3")
+
   function setupScrollanimation() {
     const tl = gsap.timeline();
 
@@ -62,8 +64,7 @@ async function setupViewer() {
         immediateRender: false,
       },
       onUpdate,
-    })
-    .to(target, {
+    }).to(target, {
       x: -1.5,
       y: 1,
       z: -0.185,
@@ -76,7 +77,7 @@ async function setupViewer() {
       },
     });
 
-    // FIRST SECTION STATE 2 
+    // FIRST SECTION STATE 2
     tl.to(position, {
       x: 0,
       y: 0,
@@ -142,11 +143,8 @@ async function setupViewer() {
     // });
 
     // LAST SECTION STAGE 3
-    
 
-
-
-    tl.to(position, { 
+    tl.to(position, {
       x: 4,
       y: -5,
       z: 4,
@@ -168,12 +166,42 @@ async function setupViewer() {
         end: "top top",
         scrub: true,
         immediateRender: false,
+        markers: true,
       },
     });
   }
 
+  function setUpBestSectionAnimation() {
+    const bestTl = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".fifth",
+        start: "top bottom",
+        end: "top top",
+        toggleActions: "play reverse play reverse",
+      },
+    });
+    const duration = 3;
+    const delay = 1.5;
+    const ease = "back.out";
+    bestTl
+      .from(".best_slider-one", {
+        x: -1 * 810,
+        duration,
+        ease,
+        onStart: () => {
+         playSound()
+        },
+      })
+      .from(".best_slider-two", { x: window.innerWidth, duration, delay, ease })
+      .from(".best_slider-three", { x: -1 * 810, duration, delay, ease });
+  }
 
-  //   tl.to(position, { 
+  function playSound(){
+    console.log("sound will be played")
+    soundEl.play()
+}
+
+  //   tl.to(position, {
   //     x: -0.13,
   //     y: 0.175,
   //     z: -2,
@@ -200,7 +228,7 @@ async function setupViewer() {
   // }
 
   setupScrollanimation();
-
+  setUpBestSectionAnimation();
   // WEBGI UPDATE
   let needsUpdate = true;
 

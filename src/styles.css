@@ -126,6 +126,10 @@ h1 {
   margin-left: 15%;
 } */
 
+.best_text_container {
+  display:block;
+}
+
 #webgi-canvas {
   width: 100%;
   height: 100%;
