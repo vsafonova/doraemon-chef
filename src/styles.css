@@ -162,12 +162,6 @@ h1 {
   align-items: center;
 }
 /* -------------------------------- */
-#container,
-.fourth {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
 
 section .fourth {
   display: grid;
