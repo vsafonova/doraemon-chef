@@ -52,8 +52,8 @@ async function setupViewer() {
     // INITIAL SECTION STATE 1
     tl.to(position, {
       x: 1.5,
-      y: 1.255,
-      z: 4.135,
+      y: 1,
+      z: 5,
       scrollTrigger: {
         trigger: ".first",
         start: "top bottom",
@@ -65,7 +65,7 @@ async function setupViewer() {
     })
     .to(target, {
       x: -1.5,
-      y: 1.065,
+      y: 1,
       z: -0.185,
       scrollTrigger: {
         trigger: ".first",
@@ -97,15 +97,15 @@ async function setupViewer() {
         scrollTrigger: {
           trigger: ".second",
           start: "top bottom",
-          end: "top 80%",
-          scrub: 1,
+          end: "top 50%",
+          scrub: 2,
           immediateRender: false,
         },
       })
       .to(target, {
         x: -1,
-        y: 0,
-        z: -0.37,
+        y: 1.1,
+        z: -18,
         scrollTrigger: {
           trigger: ".second",
           start: "top bottom",
@@ -147,9 +147,9 @@ async function setupViewer() {
 
 
     tl.to(position, { 
-      x: -0.13,
-      y: 0.175,
-      z: -2,
+      x: 4,
+      y: -5,
+      z: 4,
       scrollTrigger: {
         trigger: ".third",
         start: "top bottom",
@@ -159,9 +159,9 @@ async function setupViewer() {
       },
       onUpdate,
     }).to(target, {
-      x: 0,
-      y: 2.13,
-      z: -0.4,
+      x: -1.5,
+      y: 1,
+      z: -0.185,
       scrollTrigger: {
         trigger: ".third",
         start: "top bottom",
@@ -171,6 +171,33 @@ async function setupViewer() {
       },
     });
   }
+
+
+  //   tl.to(position, { 
+  //     x: -0.13,
+  //     y: 0.175,
+  //     z: -2,
+  //     scrollTrigger: {
+  //       trigger: ".third",
+  //       start: "top bottom",
+  //       end: "top top",
+  //       scrub: true,
+  //       immediateRender: false,
+  //     },
+  //     onUpdate,
+  //   }).to(target, {
+  //     x: 0,
+  //     y: 2.13,
+  //     z: -0.4,
+  //     scrollTrigger: {
+  //       trigger: ".third",
+  //       start: "top bottom",
+  //       end: "top top",
+  //       scrub: true,
+  //       immediateRender: false,
+  //     },
+  //   });
+  // }
 
   setupScrollanimation();
 
