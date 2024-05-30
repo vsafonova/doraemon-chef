@@ -46,6 +46,8 @@ async function setupViewer() {
 
   await manager.addFromPath("./assets/scene.glb");
 
+  const soundEl = new Audio("./assets/yoo.mp3")
+
   function setupScrollanimation() {
     const tl = gsap.timeline();
 
@@ -187,12 +189,17 @@ async function setupViewer() {
         duration,
         ease,
         onStart: () => {
-          console.log("started");
+         playSound()
         },
       })
       .from(".best_slider-two", { x: window.innerWidth, duration, delay, ease })
       .from(".best_slider-three", { x: -1 * 810, duration, delay, ease });
   }
+
+  function playSound(){
+    console.log("sound will be played")
+    soundEl.play()
+}
 
   //   tl.to(position, {
   //     x: -0.13,
