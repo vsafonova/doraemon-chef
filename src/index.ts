@@ -192,12 +192,11 @@ async function setupViewer() {
         trigger: '.fifth',
         start: 'top bottom',
         end: 'top top',
-        toggleActions: 'play reverse play reverse',
       },
     });
-    const duration = 3;
-    const delay = 1.5;
-    const ease = 'back.out';
+    const duration = 3.5;
+    const delay = -3;
+    const ease = "sine.in";
     bestTl
       .from('.best_slider-one', {
         x: -1 * 1300,
@@ -207,7 +206,7 @@ async function setupViewer() {
           playSound();
         },
       })
-      .from('.best_slider-two', { x: window.innerWidth, duration, delay, ease })
+      .from('.best_slider-two', { x: window.innerWidth, duration: duration *2, delay, ease })
       .from('.best_slider-three', { x: -1 * 1300, duration, delay, ease });
   }
 
