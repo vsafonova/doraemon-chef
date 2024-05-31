@@ -168,6 +168,11 @@ h1 {
   top: 0;
 }
 
+.best_title {
+  margin-block-start: 0;
+  margin-block-end: 0; 
+}
+
 .slider {
   display: flex;
   justify-content: space-between;
@@ -179,6 +184,7 @@ h1 {
 
 .best_slider_text {
   display: block;
+  width: 35%;
 }
 
 #webgi-canvas-container {
