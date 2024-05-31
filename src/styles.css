@@ -159,6 +159,15 @@ body {
   top: 0;
 }
 
+#chefMotion h2 {
+  transform: translate(-50%, 0%);
+  transition: all 1s ease-out;
+}
+
+#chefMotion.animation h2 {
+  transform: translate(0%, 0%);
+}
+
 .third_container--heading h2 {
   font-size: 28rem;
   line-height: 0.72;
