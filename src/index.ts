@@ -1,3 +1,4 @@
+
 import {
   ViewerApp,
   AssetManagerPlugin,
@@ -19,7 +20,6 @@ import './styles.css';
 
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-// import Lenis from '@studio-freight/lenis'
 gsap.registerPlugin(ScrollTrigger);
 
 async function setupViewer() {
@@ -32,6 +32,7 @@ async function setupViewer() {
   const camera = viewer.scene.activeCamera;
   const position = camera.position;
   const target = camera.target;
+
 
   //loader
 const importer = manager.importer as AssetImporter;
@@ -71,6 +72,7 @@ importer.addEventListener("onLoad", (ev) => {
 
 
   //   await addBasePlugins(viewer);
+
   await viewer.addPlugin(GBufferPlugin);
   await viewer.addPlugin(new ProgressivePlugin(32));
   await viewer.addPlugin(new TonemapPlugin(!viewer.useRgbm));
@@ -80,10 +82,13 @@ importer.addEventListener("onLoad", (ev) => {
 
   viewer.renderer.refreshPipeline();
 
-  await manager.addFromPath('./assets/scene.glb');
+  const model = await manager.addFromPath('./assets/scene.glb');
+  // const model = await manager.addFromPath('./assets/scene2.glb');
+  const scene = viewer.scene;
 
   const soundEl = new Audio('./assets/yoo.mp3');
   let soundOn = false;
+
   function setupScrollanimation() {
     const tl = gsap.timeline();
 
@@ -115,9 +120,9 @@ importer.addEventListener("onLoad", (ev) => {
 
     // FIRST SECTION STATE 2
     tl.to(position, {
-      x: 0,
+      x: -2,
       y: 0,
-      z: 8.27,
+      z: 6,
       scrollTrigger: {
         trigger: '.second',
         start: 'top bottom',
@@ -130,7 +135,7 @@ importer.addEventListener("onLoad", (ev) => {
       .to('.section_one_container', {
         xPercent: '-150',
         opacity: 0,
-        scale: 0.8, // Added zoom effect
+        scale: 0.1,
         scrollTrigger: {
           trigger: '.second',
           start: 'top bottom',
@@ -141,8 +146,8 @@ importer.addEventListener("onLoad", (ev) => {
       })
       .to(target, {
         x: -1,
-        y: 1.1,
-        z: -18,
+        y: 0,
+        z: -5,
         scrollTrigger: {
           trigger: '.second',
           start: 'top bottom',
@@ -176,6 +181,47 @@ importer.addEventListener("onLoad", (ev) => {
         scrub: true,
         immediateRender: false,
         markers: true,
+      },
+    });
+
+       // LAST SECTION STAGE 3
+       tl.to(position, {
+        x: -10,
+        y: 0.5,
+        z: 6,
+        scrollTrigger: {
+          trigger: '.third',
+          start: 'top bottom',
+          end: 'top top',
+          scrub: true,
+          immediateRender: false,
+        },
+        onUpdate,
+      }).to(target, {
+        x: 10,
+        y: 1,
+        z: -3,
+        scrollTrigger: {
+          trigger: '.third',
+          start: 'top bottom',
+          end: 'top top',
+          scrub: true,
+          immediateRender: false,
+          markers: true,
+        },
+      });
+
+    // ScrollTrigger for stoping the camera ad hiding the model
+    ScrollTrigger.create({
+      trigger: '.third',
+      start: 'center center',
+      onEnter: () => {
+        needsUpdate = false;
+        scene.visible = false;
+      },
+      onLeaveBack: () => {
+        needsUpdate = true;
+        scene.visible = true;
       },
     });
   }
@@ -215,13 +261,13 @@ importer.addEventListener("onLoad", (ev) => {
 
   setupScrollanimation();
   setUpBestSectionAnimation();
+  
   // WEBGI UPDATE
   let needsUpdate = true;
 
   function onUpdate() {
     needsUpdate = true;
     viewer.renderer.resetShadows();
-    //   viewer.setDirty()
   }
 
   viewer.addEventListener('preFrame', () => {
