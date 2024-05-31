@@ -33,6 +33,43 @@ async function setupViewer() {
   const position = camera.position;
   const target = camera.target;
 
+  //loader
+const importer = manager.importer as AssetImporter;
+
+//debugging loader
+const timestart = Date.now()
+
+importer.addEventListener("onProgress", (ev) => {
+  const progressRatio = ev.loaded / ev.total;
+  const progressPercent = (progressRatio *100).toFixed(0)
+  console.log(progressRatio)
+  const percentDisplay = document.querySelector(".loaded-percent")
+  document
+    .querySelector(".progress")
+    ?.setAttribute("style", `transform: scaleX(${progressRatio})`);
+
+if (percentDisplay) {
+  percentDisplay.textContent = progressPercent + "%" 
+}
+
+});
+
+importer.addEventListener("onLoad", (ev) => {
+  const timeend = Date.now()
+  console.log("page loaded in:" + (timeend-timestart) + "ms")
+  gsap.to(".loader", {
+    x: "100%",
+    duration: 0.8,
+    ease: "power4.inOut",
+    delay: 1,
+    onComplete: () => {
+      document.body.style.overflowY = "auto";
+    
+    },
+  });
+});
+
+
   //   await addBasePlugins(viewer);
   await viewer.addPlugin(GBufferPlugin);
   await viewer.addPlugin(new ProgressivePlugin(32));
