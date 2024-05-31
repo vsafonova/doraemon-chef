@@ -128,18 +128,19 @@ body {
 
 .bg_white.second h3 {
   font-size: 4rem;
-  width: 30%;
 }
 
-.bg_white.second p {
-  width: 35%;
+.paragraph-japanese p {
+  width: 40%;
   font-weight: 600;
   font-size: 1rem;
+  margin-top: 0.3rem;
 }
 
-.bg_white.second .paragraph-eng {
+.paragraph-eng p {
   color: #b8b2b2;
   font-size: 0.7rem;
+  width: 40%;
 }
 
 .bg_orange {
