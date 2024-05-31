@@ -14,17 +14,17 @@ import {
   Color,
   AssetImporter,
   addBasePlugins,
-} from "webgi";
-import "./styles.css";
+} from 'webgi';
+import './styles.css';
 
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 // import Lenis from '@studio-freight/lenis'
 gsap.registerPlugin(ScrollTrigger);
 
 async function setupViewer() {
   const viewer = new ViewerApp({
-    canvas: document.getElementById("webgi-canvas") as HTMLCanvasElement,
+    canvas: document.getElementById('webgi-canvas') as HTMLCanvasElement,
     useRgbm: false,
   });
 
@@ -43,10 +43,10 @@ async function setupViewer() {
 
   viewer.renderer.refreshPipeline();
 
-  await manager.addFromPath("./assets/scene.glb");
+  await manager.addFromPath('./assets/scene.glb');
 
-  const soundEl = new Audio("./assets/yoo.mp3")
-let soundOn = false
+  const soundEl = new Audio('./assets/yoo.mp3');
+  let soundOn = false;
   function setupScrollanimation() {
     const tl = gsap.timeline();
 
@@ -56,9 +56,9 @@ let soundOn = false
       y: 1,
       z: 5,
       scrollTrigger: {
-        trigger: ".first",
-        start: "top bottom",
-        end: "top top",
+        trigger: '.first',
+        start: 'top bottom',
+        end: 'top top',
         scrub: true,
         immediateRender: false,
       },
@@ -68,9 +68,9 @@ let soundOn = false
       y: 1,
       z: -0.185,
       scrollTrigger: {
-        trigger: ".first",
-        start: "top bottom",
-        end: "top top",
+        trigger: '.first',
+        start: 'top bottom',
+        end: 'top top',
         scrub: true,
         immediateRender: false,
       },
@@ -82,22 +82,22 @@ let soundOn = false
       y: 0,
       z: 8.27,
       scrollTrigger: {
-        trigger: ".second",
-        start: "top bottom",
-        end: "top top",
+        trigger: '.second',
+        start: 'top bottom',
+        end: 'top top',
         scrub: true,
         immediateRender: false,
       },
       onUpdate,
     })
-      .to(".section_one_container", {
-        xPercent: "-150",
+      .to('.section_one_container', {
+        xPercent: '-150',
         opacity: 0,
         scale: 0.8, // Added zoom effect
         scrollTrigger: {
-          trigger: ".second",
-          start: "top bottom",
-          end: "top 50%",
+          trigger: '.second',
+          start: 'top bottom',
+          end: 'top 50%',
           scrub: 2,
           immediateRender: false,
         },
@@ -107,62 +107,35 @@ let soundOn = false
         y: 1.1,
         z: -18,
         scrollTrigger: {
-          trigger: ".second",
-          start: "top bottom",
-          end: "top top",
+          trigger: '.second',
+          start: 'top bottom',
+          end: 'top top',
           scrub: true,
           immediateRender: false,
         },
       });
 
-    // SECOND SECTION (between first and last for smoother transition)
-    // tl.to(position, {
-    //   x: 1.5, // Intermediate position for smooth transition
-    //   y: 1.255,
-    //   z: 4.135,
-    //   scrollTrigger: {
-    //     trigger: '.second-and-half', // Assuming there's an intermediate section
-    //     start: 'top bottom',
-    //     end: 'top top',
-    //     scrub: true,
-    //     immediateRender: false,
-    //   },
-    //   onUpdate,
-    // }).to(target, {
-    //   x: -1.5,
-    //   y: 1.065,
-    //   z: -0.185,
-    //   scrollTrigger: {
-    //     trigger: '.second-and-half',
-    //     start: 'top bottom',
-    //     end: 'top top',
-    //     scrub: true,
-    //     immediateRender: false,
-    //   },
-    // });
-
     // LAST SECTION STAGE 3
-
     tl.to(position, {
-      x: 4,
-      y: -5,
-      z: 4,
+      x: -10,
+      y: 0.5,
+      z: 6,
       scrollTrigger: {
-        trigger: ".third",
-        start: "top bottom",
-        end: "top top",
+        trigger: '.third',
+        start: 'top bottom',
+        end: 'top top',
         scrub: true,
         immediateRender: false,
       },
       onUpdate,
     }).to(target, {
-      x: -1.5,
+      x: 10,
       y: 1,
-      z: -0.185,
+      z: -3,
       scrollTrigger: {
-        trigger: ".third",
-        start: "top bottom",
-        end: "top top",
+        trigger: '.third',
+        start: 'top bottom',
+        end: 'top top',
         scrub: true,
         immediateRender: false,
         markers: true,
@@ -173,62 +146,36 @@ let soundOn = false
   function setUpBestSectionAnimation() {
     const bestTl = gsap.timeline({
       scrollTrigger: {
-        trigger: ".fifth",
-        start: "top bottom",
-        end: "top top",
-        toggleActions: "play reverse play reverse",
+        trigger: '.fifth',
+        start: 'top bottom',
+        end: 'top top',
+        toggleActions: 'play reverse play reverse',
       },
     });
     const duration = 3;
     const delay = 1.5;
-    const ease = "back.out";
+    const ease = 'back.out';
     bestTl
-      .from(".best_slider-one", {
+      .from('.best_slider-one', {
         x: -1 * 1300,
         duration,
         ease,
         onStart: () => {
-         playSound()
+          playSound();
         },
       })
-      .from(".best_slider-two", { x: window.innerWidth, duration, delay, ease })
-      .from(".best_slider-three", { x: -1 * 1300, duration, delay, ease });
+      .from('.best_slider-two', { x: window.innerWidth, duration, delay, ease })
+      .from('.best_slider-three', { x: -1 * 1300, duration, delay, ease });
   }
 
-  function playSound(){
+  function playSound() {
     if (!soundOn) {
-      console.log("sound would be played but muted")
-      return
+      console.log('sound would be played but muted');
+      return;
     }
-    console.log("sound will be played")
-    soundEl.play()
-}
-
-  //   tl.to(position, {
-  //     x: -0.13,
-  //     y: 0.175,
-  //     z: -2,
-  //     scrollTrigger: {
-  //       trigger: ".third",
-  //       start: "top bottom",
-  //       end: "top top",
-  //       scrub: true,
-  //       immediateRender: false,
-  //     },
-  //     onUpdate,
-  //   }).to(target, {
-  //     x: 0,
-  //     y: 2.13,
-  //     z: -0.4,
-  //     scrollTrigger: {
-  //       trigger: ".third",
-  //       start: "top bottom",
-  //       end: "top top",
-  //       scrub: true,
-  //       immediateRender: false,
-  //     },
-  //   });
-  // }
+    console.log('sound will be played');
+    soundEl.play();
+  }
 
   setupScrollanimation();
   setUpBestSectionAnimation();
@@ -241,7 +188,7 @@ let soundOn = false
     //   viewer.setDirty()
   }
 
-  viewer.addEventListener("preFrame", () => {
+  viewer.addEventListener('preFrame', () => {
     if (needsUpdate) {
       camera.positionTargetUpdated(true);
       needsUpdate = false;
