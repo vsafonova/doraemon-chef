@@ -180,6 +180,7 @@ h1 {
   margin: 1rem;
   padding: 1rem;
   border-radius: 10px;
+  max-height: 27vh;
 }
 
 .best_slider_text {
