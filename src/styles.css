@@ -5,10 +5,23 @@
 }
 
 body {
+  position: relative;
   font-family: "DM Sans", sans-serif;
   overflow: hidden;
   margin: 0;
   padding: 0;
+}
+
+#mute-btn {
+  z-index: 1000;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 35px;
+  height: 35px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
 }
 
 .loader {
