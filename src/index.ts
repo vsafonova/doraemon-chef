@@ -1,3 +1,4 @@
+
 import {
   ViewerApp,
   AssetManagerPlugin,
@@ -19,7 +20,6 @@ import './styles.css';
 
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-// import Lenis from '@studio-freight/lenis'
 gsap.registerPlugin(ScrollTrigger);
 
 async function setupViewer() {
@@ -33,7 +33,46 @@ async function setupViewer() {
   const position = camera.position;
   const target = camera.target;
 
+
+  //loader
+const importer = manager.importer as AssetImporter;
+
+//debugging loader
+const timestart = Date.now()
+
+importer.addEventListener("onProgress", (ev) => {
+  const progressRatio = ev.loaded / ev.total;
+  const progressPercent = (progressRatio *100).toFixed(0)
+  console.log(progressRatio)
+  const percentDisplay = document.querySelector(".loaded-percent")
+  document
+    .querySelector(".progress")
+    ?.setAttribute("style", `transform: scaleX(${progressRatio})`);
+
+if (percentDisplay) {
+  percentDisplay.textContent = progressPercent + "%" 
+}
+
+});
+
+importer.addEventListener("onLoad", (ev) => {
+  const timeend = Date.now()
+  console.log("page loaded in:" + (timeend-timestart) + "ms")
+  gsap.to(".loader", {
+    x: "100%",
+    duration: 0.8,
+    ease: "power4.inOut",
+    delay: 1,
+    onComplete: () => {
+      document.body.style.overflowY = "auto";
+    
+    },
+  });
+});
+
+
   //   await addBasePlugins(viewer);
+
   await viewer.addPlugin(GBufferPlugin);
   await viewer.addPlugin(new ProgressivePlugin(32));
   await viewer.addPlugin(new TonemapPlugin(!viewer.useRgbm));
@@ -43,10 +82,13 @@ async function setupViewer() {
 
   viewer.renderer.refreshPipeline();
 
-  await manager.addFromPath('./assets/scene.glb');
+  const model = await manager.addFromPath('./assets/scene.glb');
+  // const model = await manager.addFromPath('./assets/scene2.glb');
+  const scene = viewer.scene;
 
   const soundEl = new Audio('./assets/yoo.mp3');
   let soundOn = false;
+
   function setupScrollanimation() {
     const tl = gsap.timeline();
 
@@ -78,9 +120,9 @@ async function setupViewer() {
 
     // FIRST SECTION STATE 2
     tl.to(position, {
-      x: 0,
+      x: -2,
       y: 0,
-      z: 8.27,
+      z: 6,
       scrollTrigger: {
         trigger: '.second',
         start: 'top bottom',
@@ -93,7 +135,7 @@ async function setupViewer() {
       .to('.section_one_container', {
         xPercent: '-150',
         opacity: 0,
-        scale: 0.8, // Added zoom effect
+        scale: 0.1,
         scrollTrigger: {
           trigger: '.second',
           start: 'top bottom',
@@ -104,8 +146,8 @@ async function setupViewer() {
       })
       .to(target, {
         x: -1,
-        y: 1.1,
-        z: -18,
+        y: 0,
+        z: -5,
         scrollTrigger: {
           trigger: '.second',
           start: 'top bottom',
@@ -141,6 +183,47 @@ async function setupViewer() {
         markers: true,
       },
     });
+
+       // LAST SECTION STAGE 3
+       tl.to(position, {
+        x: -10,
+        y: 0.5,
+        z: 6,
+        scrollTrigger: {
+          trigger: '.third',
+          start: 'top bottom',
+          end: 'top top',
+          scrub: true,
+          immediateRender: false,
+        },
+        onUpdate,
+      }).to(target, {
+        x: 10,
+        y: 1,
+        z: -3,
+        scrollTrigger: {
+          trigger: '.third',
+          start: 'top bottom',
+          end: 'top top',
+          scrub: true,
+          immediateRender: false,
+          markers: true,
+        },
+      });
+
+    // ScrollTrigger for stoping the camera ad hiding the model
+    ScrollTrigger.create({
+      trigger: '.third',
+      start: 'center center',
+      onEnter: () => {
+        needsUpdate = false;
+        scene.visible = false;
+      },
+      onLeaveBack: () => {
+        needsUpdate = true;
+        scene.visible = true;
+      },
+    });
   }
 
   function setUpBestSectionAnimation() {
@@ -149,12 +232,11 @@ async function setupViewer() {
         trigger: '.fifth',
         start: 'top bottom',
         end: 'top top',
-        toggleActions: 'play reverse play reverse',
       },
     });
-    const duration = 3;
-    const delay = 1.5;
-    const ease = 'back.out';
+    const duration = 3.5;
+    const delay = -3;
+    const ease = "sine.in";
     bestTl
       .from('.best_slider-one', {
         x: -1 * 1300,
@@ -164,7 +246,7 @@ async function setupViewer() {
           playSound();
         },
       })
-      .from('.best_slider-two', { x: window.innerWidth, duration, delay, ease })
+      .from('.best_slider-two', { x: window.innerWidth, duration: duration *2, delay, ease })
       .from('.best_slider-three', { x: -1 * 1300, duration, delay, ease });
   }
 
@@ -179,13 +261,13 @@ async function setupViewer() {
 
   setupScrollanimation();
   setUpBestSectionAnimation();
+  
   // WEBGI UPDATE
   let needsUpdate = true;
 
   function onUpdate() {
     needsUpdate = true;
     viewer.renderer.resetShadows();
-    //   viewer.setDirty()
   }
 
   viewer.addEventListener('preFrame', () => {
