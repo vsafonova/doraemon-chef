@@ -287,7 +287,7 @@ async function setupViewer() {
 setupViewer();
 
 document.addEventListener("DOMContentLoaded", function () {
-  const soundEl = new Audio("./assets/melody.mp3");
+  const soundEl = new Audio("./assets/doraemon-music.mp3");
   soundEl.volume = 0.3;
 
   let soundOn = false;
