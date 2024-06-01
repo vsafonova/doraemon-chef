@@ -5,14 +5,13 @@
 }
 
 body {
-
   font-family: "DM Sans", sans-serif;
-  overflow: hidden; 
+  overflow: hidden;
   margin: 0;
   padding: 0;
 }
 
-.loader{
+.loader {
   background: black;
   color: white;
   position: absolute;
@@ -23,14 +22,14 @@ body {
   align-content: center;
   align-items: center;
   z-index: 2;
-} 
+}
 
 .loaded-percent {
   position: absolute;
   top: 55%;
 }
 
-.progress{
+.progress {
   position: absolute;
   top: 52%;
   height: 1px;
@@ -83,7 +82,7 @@ body {
   flex-direction: column;
   width: 100%;
   height: 100vh;
-  justify-content: space-around;  
+  justify-content: space-around;
 }
 
 .section__one__title {
@@ -128,18 +127,19 @@ body {
 
 .bg_white.second h3 {
   font-size: 4rem;
-  width: 30%;
 }
 
-.bg_white.second p {
-  width: 35%;
+.paragraph-japanese p {
+  width: 40%;
   font-weight: 600;
   font-size: 1rem;
+  margin-top: 0.3rem;
 }
 
-.bg_white.second .paragraph-eng {
+.paragraph-eng p {
   color: #b8b2b2;
   font-size: 0.7rem;
+  width: 40%;
 }
 
 .bg_orange {
@@ -157,6 +157,15 @@ body {
   position: absolute;
   left: 1%;
   top: 0;
+}
+
+#chefMotion h2 {
+  transform: translate(-50%, 0%);
+  transition: all 1s ease-out;
+}
+
+#chefMotion.animation h2 {
+  transform: translate(0%, 0%);
 }
 
 .third_container--heading h2 {
