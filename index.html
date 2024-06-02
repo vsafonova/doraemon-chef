@@ -17,6 +17,21 @@
       <div class="progress"></div>
     </div>
 
+    <button id="mute-btn">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M14 3.00001C14 1.07799 11.5532 0.262376 10.4 1.8L6.5 7H4C2.34315 7 1 8.34315 1 10V14C1 15.6569 2.34315 17 4 17H6.49356L10.3878 22.3049C11.5313 23.8627 14 23.0539 14 21.1214V3.00001ZM8.1 8.2L12 3V21.1214L8.10581 15.8165C7.72901 15.3032 7.13031 15 6.49356 15H4C3.44772 15 3 14.5523 3 14V10C3 9.44772 3.44772 9 4 9H6.5C7.12951 9 7.72229 8.70361 8.1 8.2Z"
+          fill="#0F0F0F"
+        ></path>
+        <path
+          d="M21.2929 8.57094C21.6834 8.18041 22.3166 8.18042 22.7071 8.57094C23.0976 8.96146 23.0976 9.59463 22.7071 9.98515L20.7603 11.9319L22.7071 13.8787C23.0976 14.2692 23.0976 14.9024 22.7071 15.2929C22.3166 15.6834 21.6834 15.6834 21.2929 15.2929L19.3461 13.3461L17.3994 15.2929C17.0088 15.6834 16.3757 15.6834 15.9852 15.2929C15.5946 14.9023 15.5946 14.2692 15.9852 13.8787L17.9319 11.9319L15.9852 9.98517C15.5946 9.59464 15.5946 8.96148 15.9852 8.57096C16.3757 8.18043 17.0088 8.18043 17.3994 8.57096L19.3461 10.5177L21.2929 8.57094Z"
+          fill="#0F0F0F"
+        ></path>
+      </svg>
+    </button>
+
     <header class="header">
       <button class="header__button header__button-about">
         <div class="header__button_names">
@@ -70,26 +85,41 @@
     </section>
 
     <section class="section bg_white second">
-      <h3>炭火焼き魚</h3>
-      <p>
-        炭火で焼いた魚は、珍味の定番です。焼き魚にはさまざまな調理法がありますが、炭火焼きは独特の魅力がある調理法です。
-        <br />
-        炭火焼き魚の歴史は古代にまで遡ります。古代中国の一部の地域では、人々は炭火を使って魚料理を焼くことを好み、この焼き方は徐々に伝統的な焼き魚の方法へと進化しました。
-        <br />
-        さまざまな消費者グループに応え、新しい外観を開拓し、新しい味と新しい美学で遊び、独占ブランドの新鮮な体験を生み出し、小さな貪欲な猫ブランドの人気を拡大します。
-      </p>
-      <p class="paragraph-eng">
-        Grilled fish over a charcoal fire, is a classic in a delicacy. There are many ways to prepare grilled fish, but
-        charcoal-grilled fish is a the method with unique charm.<br />
-        The history of charcoal-grilled fish can be traced back to ancient times. In some areas of ancient China, people
-        liked to use charcoal fire to grill fish food, and this grilling method has gradually evolved into a traditional
-        grilled fish method.<br />
-        Respond to different consumer groups, open up a new look, play with new tastes and new aesthetics, create a
-        fresh experience of exclusive brands, and expand the popularity of the Little Greedy Cat brand.
-      </p>
+      <h3>ふわふわパンケーキ</h3>
+      <div class="paragraph-japanese">
+        <p>
+          代々受け継がれてきた家族のレシピで作られるふわふわのパンケーキは、朝食の定番です。パンケーキの作り方はさまざまですが、当店の秘密のレシピがこの人気の一品に独特の魅力を加えています。
+        </p>
+        <p>
+          当店のパンケーキの歴史は、パンケーキ作りの技術を極めた先祖にまで遡ります。地元の業者から仕入れた新鮮な材料を使用し、ひとつひとつのパンケーキを丁寧に作り上げ、料理の伝統の味を忠実に再現しています。
+        </p>
+        <p>
+          さまざまな味覚にアピールするために、私たちは常に新しい味とトッピングを導入し、誰もが新鮮なパンケーキ体験を味わえるようにしています。温かく居心地の良い雰囲気を楽しみながら、私たちの家族の伝統的なパンケーキのユニークな味を味わってください。
+        </p>
+      </div>
+      <div class="paragraph-eng">
+        <p>
+          Fluffy pancakes, made from a family recipe passed down through
+          generations, are a classic breakfast delicacy. There are many ways to
+          prepare pancakes, but our secret recipe adds a unique charm to this
+          beloved dish.
+        </p>
+        <p>
+          The history of our pancakes can be traced back to our ancestors who
+          perfected the art of pancake making. Using fresh ingredients from
+          local suppliers, each pancake is crafted with care to ensure an
+          authentic taste of culinary heritage.
+        </p>
+        <p>
+          To appeal to different tastes, we continually introduce new flavors
+          and toppings, creating a fresh pancake experience for everyone. Enjoy
+          our warm, cozy atmosphere, and savor the unique taste of our family’s
+          traditional pancakes.
+        </p>
+      </div>
     </section>
     <section class="section bg_orange third">
-      <div class="third_container--heading">
+      <div class="third_container--heading" id="chefMotion">
         <h2>CHEF</h2>
       </div>
       <div class="third_container--image">
@@ -97,8 +127,27 @@
       </div>
     </section>
     <section class="section bg_yellow fourth">
-      <h2 id="text">私はパンケーキが大好きです。ベリージャムのパンケーキ。ああ、なんておいしいんだろう！</h2>
-      <div id="container"></div>
+      <h2 id="text">
+        私はパンケーキが大好きです。ベリージャムのパンケーキ。ああ、なんておいしいんだろう！
+      </h2>
+      <!-- <div id="container"></div> -->
+    </section>
+
+    <section class="section bg_white fourth-and-half">
+      <div class="fourth-and-half__text">
+        漫画イメージブランドデザイン<br />cartoon image brand designe
+      </div>
+      <div class="video">
+        <video autoplay loop muted width="400">
+          <source src="/assets/video-cat.webm" type="video/webm" />
+        </video>
+      </div>
+      <div class="video__text">
+        事实上，眼睛向上遐想的森情并非你想的如此,<br />
+        不过是小黑猫无时无刻都在嘴馋美味烤鱼
+      </div>
+      <!-- <div id="container"></div> -->
+      <div class="bg_beige"></div>
     </section>
 
     <section class="section bg_white fifth">
@@ -152,6 +201,7 @@
             </svg>
           </div>
           <div class="container-item">
+            <div>小さな日本語のテキスト</div>
             <div>もう一つの小さなテキスト</div>
             <div class="text-center">-</div>
             <div>良い一日を</div>
@@ -170,6 +220,7 @@
     <script src="src/index.ts"></script>
     <script src="src/heroWelcomeEl.js"></script>
     <script src="src/animatedText.js"></script>
+    <script src="src/chefAnimation.js"></script>
     <!-- <script src="./src/modelContainer.js"></script> -->
   </body>
 </html>
