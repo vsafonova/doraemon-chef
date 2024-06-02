@@ -3,17 +3,11 @@
   <head>
     <title>Doraemon</title>
     <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
-    />
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet" />
   </head>
 
   <body>
@@ -40,12 +34,37 @@
     </header>
 
     <section class="section bg_yellow first">
-      <div class="section_one_container">
-        <h1 class="section__one__title">PANCAKE CAFE</h1>
-        <p class="section__one__subtitle">A unique family pancake restaurant with our main chef, Doraemon.</p>
-        <div class="creators">
+      <div class="section__one">
+        <div class="section__one_top">
+          <h1 class="section__one__title">PANCAKE CAFE</h1>
+          <p class="section__one__subtitle">A unique family pancake restaurant with our main chef, Doraemon.</p>
+          <!-- <div class="creators">
           <p>クリエイターチーム1</p>
           <p>Creators: Team 1</p>
+        </div> -->
+        </div>
+        <!-- <div class="welcome">
+          <div class="welcome__first" id="welcome-init-text">
+            <p class="welcome__title">Welcome to us</p>
+            <p class="welcome__subtitle">Learn more about us below</p>
+            <img src="./assets/images/arrow.svg" class="welcome__arrow" />
+          </div>
+          <div class="welcome__second welcome__section-none" id="welcome-scroll">
+            <p class="welcome__title">Welcome bhj</p>
+            <p class="welcome__subtitle">Learn more abhghj</p>
+            <img src="./assets/images/arrow.svg" class="welcome__arrow" />
+          </div>
+        </div> -->
+        <div class="welcome">
+          <div class="welcome__text" id="welcome-first">
+            <p class="welcome__title">Welcome to us</p>
+            <p class="welcome__subtitle">Learn more about us below</p>
+            <img src="./assets/images/arrow.svg" class="welcome__arrow" />
+          </div>
+          <div class="welcome__text welcome__text-none" id="welcome-second">
+            <p class="welcome__scroll-title">Scroll</p>
+            <img src="./assets/images/arrow.svg" class="welcome__arrow" />
+          </div>
         </div>
       </div>
     </section>
@@ -60,16 +79,13 @@
         さまざまな消費者グループに応え、新しい外観を開拓し、新しい味と新しい美学で遊び、独占ブランドの新鮮な体験を生み出し、小さな貪欲な猫ブランドの人気を拡大します。
       </p>
       <p class="paragraph-eng">
-        Grilled fish over a charcoal fire, is a classic in a delicacy. There are
-        many ways to prepare grilled fish, but charcoal-grilled fish is a the
-        method with unique charm.<br />
-        The history of charcoal-grilled fish can be traced back to ancient
-        times. In some areas of ancient China, people liked to use charcoal fire
-        to grill fish food, and this grilling method has gradually evolved into
-        a traditional grilled fish method.<br />
-        Respond to different consumer groups, open up a new look, play with new
-        tastes and new aesthetics, create a fresh experience of exclusive
-        brands, and expand the popularity of the Little Greedy Cat brand.
+        Grilled fish over a charcoal fire, is a classic in a delicacy. There are many ways to prepare grilled fish, but
+        charcoal-grilled fish is a the method with unique charm.<br />
+        The history of charcoal-grilled fish can be traced back to ancient times. In some areas of ancient China, people
+        liked to use charcoal fire to grill fish food, and this grilling method has gradually evolved into a traditional
+        grilled fish method.<br />
+        Respond to different consumer groups, open up a new look, play with new tastes and new aesthetics, create a
+        fresh experience of exclusive brands, and expand the popularity of the Little Greedy Cat brand.
       </p>
     </section>
     <section class="section bg_orange third">
@@ -77,16 +93,11 @@
         <h2>CHEF</h2>
       </div>
       <div class="third_container--image">
-        <img
-          src="/assets/images/hero_cat.png"
-          alt="Blue Japanese cat is eating pancakes"
-        />
+        <img src="/assets/images/hero_cat.png" alt="Blue Japanese cat is eating pancakes" class="cat" />
       </div>
     </section>
     <section class="section bg_yellow fourth">
-      <h2 id="text">
-        私はパンケーキが大好きです。ベリージャムのパンケーキ。ああ、なんておいしいんだろう！
-      </h2>
+      <h2 id="text">私はパンケーキが大好きです。ベリージャムのパンケーキ。ああ、なんておいしいんだろう！</h2>
       <div id="container"></div>
     </section>
 
@@ -96,9 +107,8 @@
         <div class="best_slider_text">
           <h3>Family recipies</h3>
           <p>
-            Traditional recipes and cooking methods passed down through
-            generations. Every dish is crafted with love and care, providing an
-            authentic taste of culinary heritage.
+            Traditional recipes and cooking methods passed down through generations. Every dish is crafted with love and
+            care, providing an authentic taste of culinary heritage.
           </p>
         </div>
         <img src="https://picsum.photos/250/250" alt="picture" />
@@ -107,9 +117,8 @@
         <div class="best_slider_text">
           <h3>Fresh ingredients</h3>
           <p>
-            Fresh ingredients from local suppliers whenever possible. From
-            farm-fresh produce to locally sourced meats and seafood, you can
-            trust that every dish is made with the finest ingredients,
+            Fresh ingredients from local suppliers whenever possible. From farm-fresh produce to locally sourced meats
+            and seafood, you can trust that every dish is made with the finest ingredients,
           </p>
         </div>
         <img src="https://picsum.photos/250/250" alt="picture" />
@@ -118,8 +127,8 @@
         <div class="best_slider_text">
           <h3>Warm atmosphere</h3>
           <p>
-            Step into a family-owned restaurant, and you'll immediately feel the
-            warmth and charm of a cozy, homely atmosphere.
+            Step into a family-owned restaurant, and you'll immediately feel the warmth and charm of a cozy, homely
+            atmosphere.
           </p>
         </div>
         <img src="https://picsum.photos/250/250" alt="picture" />
@@ -136,12 +145,7 @@
             <div>MADE BY Team #1</div>
           </div>
           <div class="container-item">
-            <svg
-              fill="#000000"
-              height="50px"
-              width="50px"
-              viewBox="0 0 490 490"
-            >
+            <svg fill="#000000" height="50px" width="50px" viewBox="0 0 490 490">
               <polygon
                 points="456.851,0 245,212.564 33.149,0 0.708,32.337 212.669,245.004 0.708,457.678 33.149,490 245,277.443 456.851,490 489.292,457.678 277.331,245.004 489.292,32.337 "
               ></polygon>
@@ -164,6 +168,7 @@
     </div>
 
     <script src="src/index.ts"></script>
+    <script src="src/heroWelcomeEl.js"></script>
     <script src="src/animatedText.js"></script>
     <!-- <script src="./src/modelContainer.js"></script> -->
   </body>

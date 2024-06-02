@@ -1,4 +1,3 @@
-
 import {
   ViewerApp,
   AssetManagerPlugin,
@@ -23,6 +22,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
 async function setupViewer() {
+
   const viewer = new ViewerApp({
     canvas: document.getElementById('webgi-canvas') as HTMLCanvasElement,
     useRgbm: false,
@@ -33,45 +33,37 @@ async function setupViewer() {
   const position = camera.position;
   const target = camera.target;
 
-
   //loader
-const importer = manager.importer as AssetImporter;
+  const importer = manager.importer as AssetImporter;
 
-//debugging loader
-const timestart = Date.now()
+  //debugging loader
+  const timestart = Date.now();
 
-importer.addEventListener("onProgress", (ev) => {
-  const progressRatio = ev.loaded / ev.total;
-  const progressPercent = (progressRatio *100).toFixed(0)
-  console.log(progressRatio)
-  const percentDisplay = document.querySelector(".loaded-percent")
-  document
-    .querySelector(".progress")
-    ?.setAttribute("style", `transform: scaleX(${progressRatio})`);
+  importer.addEventListener('onProgress', (ev) => {
+    const progressRatio = ev.loaded / ev.total;
+    const progressPercent = (progressRatio * 100).toFixed(0);
+    console.log(progressRatio);
+    const percentDisplay = document.querySelector('.loaded-percent');
+    document.querySelector('.progress')?.setAttribute('style', `transform: scaleX(${progressRatio})`);
 
-if (percentDisplay) {
-  percentDisplay.textContent = progressPercent + "%" 
-}
-
-});
-
-importer.addEventListener("onLoad", (ev) => {
-  const timeend = Date.now()
-  console.log("page loaded in:" + (timeend-timestart) + "ms")
-  gsap.to(".loader", {
-    x: "100%",
-    duration: 0.8,
-    ease: "power4.inOut",
-    delay: 1,
-    onComplete: () => {
-      document.body.style.overflowY = "auto";
-    
-    },
+    if (percentDisplay) {
+      percentDisplay.textContent = progressPercent + '%';
+    }
   });
-});
 
-
-  //   await addBasePlugins(viewer);
+  importer.addEventListener('onLoad', (ev) => {
+    const timeend = Date.now();
+    console.log('page loaded in:' + (timeend - timestart) + 'ms');
+    gsap.to('.loader', {
+      x: '100%',
+      duration: 0.8,
+      ease: 'power4.inOut',
+      delay: 1,
+      onComplete: () => {
+        document.body.style.overflowY = 'auto';
+      },
+    });
+  });
 
   await viewer.addPlugin(GBufferPlugin);
   await viewer.addPlugin(new ProgressivePlugin(32));
@@ -132,7 +124,7 @@ importer.addEventListener("onLoad", (ev) => {
       },
       onUpdate,
     })
-      .to('.section_one_container', {
+      .to('.section__one_top', {
         xPercent: '-150',
         opacity: 0,
         scale: 0.1,
@@ -184,32 +176,32 @@ importer.addEventListener("onLoad", (ev) => {
       },
     });
 
-       // LAST SECTION STAGE 3
-       tl.to(position, {
-        x: -10,
-        y: 0.5,
-        z: 6,
-        scrollTrigger: {
-          trigger: '.third',
-          start: 'top bottom',
-          end: 'top top',
-          scrub: true,
-          immediateRender: false,
-        },
-        onUpdate,
-      }).to(target, {
-        x: 10,
-        y: 1,
-        z: -3,
-        scrollTrigger: {
-          trigger: '.third',
-          start: 'top bottom',
-          end: 'top top',
-          scrub: true,
-          immediateRender: false,
-          markers: true,
-        },
-      });
+    // LAST SECTION STAGE 3
+    tl.to(position, {
+      x: -10,
+      y: 0.5,
+      z: 6,
+      scrollTrigger: {
+        trigger: '.third',
+        start: 'top bottom',
+        end: 'top top',
+        scrub: true,
+        immediateRender: false,
+      },
+      onUpdate,
+    }).to(target, {
+      x: 10,
+      y: 1,
+      z: -3,
+      scrollTrigger: {
+        trigger: '.third',
+        start: 'top bottom',
+        end: 'top top',
+        scrub: true,
+        immediateRender: false,
+        markers: true,
+      },
+    });
 
     // ScrollTrigger for stoping the camera ad hiding the model
     ScrollTrigger.create({
@@ -236,7 +228,7 @@ importer.addEventListener("onLoad", (ev) => {
     });
     const duration = 3.5;
     const delay = -3;
-    const ease = "sine.in";
+    const ease = 'sine.in';
     bestTl
       .from('.best_slider-one', {
         x: -1 * 1300,
@@ -246,7 +238,7 @@ importer.addEventListener("onLoad", (ev) => {
           playSound();
         },
       })
-      .from('.best_slider-two', { x: window.innerWidth, duration: duration *2, delay, ease })
+      .from('.best_slider-two', { x: window.innerWidth, duration: duration * 2, delay, ease })
       .from('.best_slider-three', { x: -1 * 1300, duration, delay, ease });
   }
 
@@ -261,7 +253,7 @@ importer.addEventListener("onLoad", (ev) => {
 
   setupScrollanimation();
   setUpBestSectionAnimation();
-  
+
   // WEBGI UPDATE
   let needsUpdate = true;
 
@@ -276,6 +268,11 @@ importer.addEventListener("onLoad", (ev) => {
       needsUpdate = false;
     }
   });
+
+  
 }
 
 setupViewer();
+
+
+
