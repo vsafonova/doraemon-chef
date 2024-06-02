@@ -19,7 +19,7 @@ let tl = gsap.timeline({
 });
 
 tl.to(".animated-text", {
-  x: 1300,
+  x: 1200,
 });
 
 // smooth scroll
