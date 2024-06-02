@@ -11,8 +11,10 @@ gsap.registerPlugin(ScrollTrigger);
 let tl = gsap.timeline({
   scrollTrigger: {
     trigger: ".animated-text",
-    start: "top 80%",
-    end: "bottom 60%",
+    // start: "top 80%",
+    // end: "bottom 60%",
+    start: "top 60%",
+    end: "bottom center",
     scrub: true,
     markers: true,
   },
