@@ -310,6 +310,11 @@ section .fourth {
 }
 
 .footer {
+  /* display: fixed;
+  bottom: 0;
+  right: 0;
+  left: 0; */
+
   width: 100%;
   padding: 2rem;
   font-size: 2rem;
@@ -332,4 +337,30 @@ section .fourth {
   width: 500px;
   font-weight: 200;
   font-size: 0.5rem;
+}
+
+/* ------------------------------- */
+.sixth {
+  display: block;
+  height: screen;
+  width: 100%;
+}
+.animated-text__container {
+  height: 600px;
+}
+.animated-text {
+  width: 300px;
+  padding: 40px 60px;
+  border-radius: 50%;
+  border: 2px solid black;
+  background-color: #fff;
+
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  left: -400px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+.spacer {
+  height: 100vh;
 }
