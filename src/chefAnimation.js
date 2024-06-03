@@ -14,10 +14,6 @@ window.addEventListener("scroll", function (event) {
     return;
   }
 
-  if (top < windowHeight / 2 && top > lastTop) {
-    animation.classList.remove("animation");
-  }
-
   if (animation.className.indexOf("animation") === -1 && top < lastTop) {
     animation.classList.add("animation");
   }
