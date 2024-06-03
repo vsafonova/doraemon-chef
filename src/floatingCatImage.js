@@ -22,4 +22,29 @@ const updateYPercent = () => {
 
 updateYPercent();
 
+const animateButton = () => {
+  gsap.to('.book-button-last', {
+    yPercent: '450',
+    xPercent: '100',
+    scale: 1.3,
+    scrollTrigger: {
+      trigger: '.last',
+      start: 'top top',
+      end: 'top 50%',
+      scrub: 2,
+      immediateRender: false,
+    },
+  });
+};
+
+animateButton();
+
 window.addEventListener('resize', updateYPercent);
+
+const bookTableButton = document.querySelectorAll('.book-table-button');
+
+bookTableButton.forEach((button) => {
+  button.addEventListener('click', () => {
+    alert('We apologise. This section of our website is under development.');
+  });
+});
