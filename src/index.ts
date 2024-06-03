@@ -203,19 +203,47 @@ async function setupViewer() {
       },
     });
 
-    // ScrollTrigger for stoping the camera ad hiding the model
-    ScrollTrigger.create({
-      trigger: ".third",
-      start: "center center",
-      onEnter: () => {
-        needsUpdate = false;
-        scene.visible = false;
-      },
-      onLeaveBack: () => {
-        needsUpdate = true;
-        scene.visible = true;
-      },
-    });
+      tl.to(position, {
+        x: 8,
+        y: 0.5,
+        z: 6,
+        scrollTrigger: {
+          trigger: ".fourth-and-half",
+          start: "top bottom",
+          end: "top top",
+          scrub: true,
+          immediateRender: false,
+        },
+        onUpdate,
+      }).to(target, {
+        x: 14,
+        y: 1,
+        z: -3,
+        scrollTrigger: {
+          trigger: ".fourth-and-half",
+          start: "top bottom",
+          end: "top top",
+          scrub: true,
+          immediateRender: false,
+          // markers: true,
+        },
+      });
+
+    // // ScrollTrigger for stoping the camera ad hiding the model
+    // ScrollTrigger.create({
+    //   trigger: ".third",
+    //   start: "bottom top",
+    //   onEnter: () => {
+    //     console.log("Entered trigger");
+    //     needsUpdate = false;
+    //     scene.visible = false;
+    //   },
+    //   onLeaveBack: () => {
+    //     console.log("Left trigger");
+    //     needsUpdate = true;
+    //     scene.visible = true;
+    //   },
+    // });
   }
 
   function setUpBestSectionAnimation() {
