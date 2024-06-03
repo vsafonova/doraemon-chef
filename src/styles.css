@@ -63,6 +63,7 @@ body {
   justify-content: center;
   width: 100%;
   margin-top: 30px;
+  gap: 50px;
 }
 
 .header__button {
@@ -76,7 +77,6 @@ body {
 
 .header__button-book {
   display: flex;
-  margin-left: 50px;
 }
 
 .header__button_bottom-name {
@@ -90,7 +90,7 @@ body {
   padding-right: 40px;
 }
 
-.section_one_container {
+.section__one {
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -98,16 +98,84 @@ body {
   justify-content: space-around;
 }
 
+.section__one_top {
+  display: flex;
+  flex-direction: column;
+}
+
 .section__one__title {
   font-size: 200px;
   max-width: 1200px;
   width: 80%;
-  margin-top: 70px;
+  margin-top: 30px;
 }
 
 .section__one__subtitle {
   font-size: 30px;
   max-width: 500px;
+}
+
+.section__last {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  height: 100%;
+}
+
+.section__last_button-container {
+  display: flex;
+  height: 50px;
+  margin-top: 100px;
+}
+
+.section__last-img {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+}
+
+.welcome {
+  display: flex;
+  align-self: center;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.welcome__title {
+  font-size: 18px;
+  line-height: 1;
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+
+.welcome__scroll-title {
+  font-size: 26px;
+  line-height: 1;
+  font-weight: 500;
+}
+
+.welcome__arrow {
+  width: 30px;
+  display: block;
+  height: 30px;
+}
+
+.welcome__subtitle {
+  font-size: 12px;
+  line-height: 1;
+  font-weight: 400;
+}
+
+.welcome__text {
+  width: 200px;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  align-items: center;
+}
+
+.welcome__text-none {
+  display: none;
 }
 
 .creators {
@@ -129,6 +197,10 @@ body {
 
 .bg_white {
   background-color: #fff;
+}
+
+.bg_beige {
+  background-color: #FCF3E1;
 }
 
 .bg_white.second {
@@ -210,11 +282,6 @@ h1 {
   margin: 0 0 30px -10px;
 }
 
-/* .section--one--container{
-  width: 360px;
-  margin-left: 15%;
-} */
-
 .best_text_container {
   display: block;
 }
@@ -263,6 +330,7 @@ section .fourth {
   place-content: center;
   height: 100vh;
 }
+
 
 #text {
   margin: 0 auto;
