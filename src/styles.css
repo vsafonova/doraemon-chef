@@ -364,16 +364,19 @@ h1 {
 /* -------------------------------- */
 
 .fourth {
+  position: relative;
   display: flex;
   flex-direction: column;
 }
 
 .animated-yellow-text__container {
-  position: relative;
+  position: absolute;
+  left: 100px;
+  /* position: relative; */
   display: grid;
   place-content: center;
   height: 90vh;
-  width: 1440px;
+  width: 840px;
 }
 
 .cat-img {
@@ -403,7 +406,7 @@ h1 {
 }
 
 #text {
-  width: 1440px !important;
+  width: 840px !important;
   font-size: 4rem;
   text-transform: uppercase;
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
