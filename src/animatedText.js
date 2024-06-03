@@ -69,3 +69,8 @@ gsap.to(".char", {
   // delay: 0.2,
   duration: 0.1,
 });
+
+// scroll to top
+window.onbeforeunload = function () {
+  window.scrollTo(0, 0);
+};
