@@ -267,7 +267,7 @@ setupViewer();
 
 document.addEventListener("DOMContentLoaded", function () {
   const soundEl = new Audio("./assets/doraemon-music.mp3");
-  soundEl.volume = 0.3;
+  soundEl.volume = 0.1;
 
   let soundOn = false;
 
