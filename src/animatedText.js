@@ -33,6 +33,7 @@ let tl2 = gsap.timeline({
 
 tl2.to(".animated-text", {
   x: -100,
+  ease: "power2.out",
 });
 
 // pancake-img
