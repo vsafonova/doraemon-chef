@@ -19,7 +19,7 @@ let tl = gsap.timeline({
 });
 
 tl.to(".animated-text", {
-  x: 1020,
+  x: 1060,
 });
 
 let tl2 = gsap.timeline({
