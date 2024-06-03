@@ -67,8 +67,9 @@ const textEl = new SplitType("#text");
 gsap.to(".char", {
   scrollTrigger: {
     trigger: "#text",
-    start: "top center",
-    // start: "top 80%",
+    // start: "top center",
+    start: "top 90%",
+    // markers: true,
   },
   y: 0,
   stagger: 0.05,
@@ -83,8 +84,8 @@ gsap.to(".char", {
     scrub: true,
     markers: true,
   },
-  x: 400,
-  stagger: 0.03,
+  y: 480,
+  stagger: 0.01,
   duration: 0.1,
 });
 
