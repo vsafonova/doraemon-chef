@@ -327,10 +327,22 @@ h1 {
 /* -------------------------------- */
 
 .fourth {
+  display: flex;
+  flex-direction: column;
+}
+
+.animated-yellow-text__container {
   display: grid;
   place-content: center;
-  height: 100vh;
+  height: 90vh;
   width: 1440px;
+}
+
+.animated-yellow-text__paragraph-eng {
+  color: #515151;
+  font-size: 0.7rem;
+  width: 40%;
+  text-align: center;
 }
 
 .line {
