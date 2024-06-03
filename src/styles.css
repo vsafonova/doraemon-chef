@@ -266,7 +266,6 @@ body {
 }
 
 .third_container--image {
-  /* width: 400px; */
   background-color: rgb(246, 240, 210);
   display: flex;
   align-items: end;
@@ -372,7 +371,6 @@ h1 {
 .animated-yellow-text__container {
   position: absolute;
   left: 100px;
-  /* position: relative; */
   display: grid;
   place-content: center;
   height: 90vh;
@@ -395,8 +393,6 @@ h1 {
 
 .line {
   margin: 0 auto;
-  /* width: 1200px !important; */
-  /* width: 100%; */
   text-align: center !important;
 }
 
@@ -416,7 +412,6 @@ h1 {
 
 .char {
   transform: translateY(580px);
-  /* transform: translateX(800px); */
   transition: transform 0.5s;
 }
 
