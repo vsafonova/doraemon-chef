@@ -22,6 +22,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 async function setupViewer() {
+
   const viewer = new ViewerApp({
     canvas: document.getElementById("webgi-canvas") as HTMLCanvasElement,
     useRgbm: false,
@@ -124,8 +125,8 @@ async function setupViewer() {
       },
       onUpdate,
     })
-      .to(".section_one_container", {
-        xPercent: "-150",
+      .to('.section__one_top', {
+        xPercent: '-150',
         opacity: 0,
         scale: 0.1,
         scrollTrigger: {
@@ -228,7 +229,7 @@ async function setupViewer() {
     });
     const duration = 3.5;
     const delay = -3;
-    const ease = "sine.in";
+    const ease = 'sine.in';
     bestTl
       .from(".best_slider-one", {
         x: -1 * 1300,
@@ -261,6 +262,8 @@ async function setupViewer() {
       needsUpdate = false;
     }
   });
+
+  
 }
 
 setupViewer();
