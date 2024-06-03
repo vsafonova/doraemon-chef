@@ -22,6 +22,19 @@ tl.to(".animated-text", {
   x: 1020,
 });
 
+let tl2 = gsap.timeline({
+  scrollTrigger: {
+    trigger: ".animated-text",
+    start: "bottom center",
+    scrub: true,
+    markers: true,
+  },
+});
+
+tl2.to(".animated-text", {
+  x: -100,
+});
+
 // pancake-img
 
 // -----------------------------------------------
