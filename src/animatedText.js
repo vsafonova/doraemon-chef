@@ -19,9 +19,12 @@ let tl = gsap.timeline({
 });
 
 tl.to(".animated-text", {
-  x: 1200,
+  x: 1020,
 });
 
+// pancake-img
+
+// -----------------------------------------------
 // smooth scroll
 const lenis = new Lenis();
 
