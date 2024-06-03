@@ -78,7 +78,6 @@ async function setupViewer() {
   viewer.renderer.refreshPipeline();
 
   const model = await manager.addFromPath("./assets/scene.glb");
-  // const model = await manager.addFromPath('./assets/scene2.glb');
   const scene = viewer.scene;
 
   function setupScrollanimation() {
@@ -176,7 +175,7 @@ async function setupViewer() {
       },
     });
 
-    // LAST SECTION STAGE 3
+    // go away
     tl.to(position, {
       x: -10,
       y: 0.5,
@@ -204,9 +203,9 @@ async function setupViewer() {
     });
 
       tl.to(position, {
-        x: 8,
-        y: 0.5,
-        z: 6,
+        x: 6,
+        y: 1,
+        z: 0,
         scrollTrigger: {
           trigger: ".fourth-and-half",
           start: "top bottom",
@@ -217,7 +216,7 @@ async function setupViewer() {
         onUpdate,
       }).to(target, {
         x: 14,
-        y: 1,
+        y: 7,
         z: -3,
         scrollTrigger: {
           trigger: ".fourth-and-half",

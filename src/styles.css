@@ -127,12 +127,13 @@ body {
   display: flex;
   height: 50px;
   margin-top: 100px;
+  overflow: hidden;
 }
 
 .section__last-img {
-  position: absolute;
+ position: absolute;
   width: 100%;
-  bottom: 0;
+  bottom: -100%;
 }
 
 .welcome {
