@@ -27,15 +27,31 @@ let tl2 = gsap.timeline({
     trigger: ".animated-text",
     start: "bottom center",
     scrub: true,
-    markers: true,
+    markers: false,
   },
 });
 
 tl2.to(".animated-text", {
   x: -100,
+  ease: "power2.out",
 });
 
 // pancake-img
+
+let tl3 = gsap.timeline({
+  scrollTrigger: {
+    trigger: "#pancake-img",
+    start: "top center",
+    scrub: true,
+    markers: false,
+  },
+});
+
+tl3.to("#pancake-img", {
+  // duration: 1,
+  scale: 1.6,
+  ease: "power2.out",
+});
 
 // -----------------------------------------------
 // smooth scroll
