@@ -43,7 +43,7 @@ let tl3 = gsap.timeline({
     trigger: "#pancake-img",
     start: "top center",
     scrub: true,
-    markers: true,
+    markers: false,
   },
 });
 
