@@ -11,8 +11,6 @@ gsap.registerPlugin(ScrollTrigger);
 let tl = gsap.timeline({
   scrollTrigger: {
     trigger: ".animated-text",
-    // start: "top 80%",
-    // end: "bottom 60%",
     start: "top 60%",
     end: "bottom center",
     scrub: true,
@@ -41,35 +39,10 @@ requestAnimationFrame(raf);
 // ---------------------------------------------------------
 const textEl = new SplitType("#text");
 
-// gsap.to(".char", {
-//   scrollTrigger: {
-//     trigger: "#text",
-//     start: "top 80%",
-//   },
-//   x: 0,
-//   stagger: 0.05,
-//   delay: 0.2,
-//   duration: 0.1,
-// });
-
-// gsap.to(".char", {
-//   scrollTrigger: {
-//     trigger: "#text",
-//     start: "bottom 30%",
-//     scrub: true,
-//     markers: true,
-//   },
-//   x: 400,
-//   stagger: 0.03,
-//   duration: 0.1,
-// });
-
 gsap.to(".char", {
   scrollTrigger: {
     trigger: "#text",
-    // start: "top center",
     start: "top 90%",
-    // markers: true,
   },
   y: 0,
   stagger: 0.05,
@@ -82,7 +55,6 @@ gsap.to(".char", {
     trigger: "#text",
     start: "bottom 30%",
     scrub: true,
-    // markers: true,
   },
   y: 480,
   stagger: 0.01,
