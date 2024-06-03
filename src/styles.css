@@ -205,7 +205,7 @@ body {
 }
 
 .bg_blue {
-  background-color: #1AE1F8;
+  background-color: #2f81c5;
 }
 
 .bg_white.second {
@@ -299,9 +299,6 @@ h1 {
   top: 0;
 }
 
-.fifth {
-
-}
 
 .best_title {
   margin-block-start: 0;
@@ -329,6 +326,7 @@ h1 {
   padding: 1rem;
   border-radius: 10px;
   max-height: 27vh;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .best_slider_text {
