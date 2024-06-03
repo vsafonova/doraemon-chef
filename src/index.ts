@@ -35,10 +35,7 @@ async function setupViewer() {
 
   //loader
   const importer = manager.importer as AssetImporter;
-  const importer = manager.importer as AssetImporter;
 
-  //debugging loader
-  const timestart = Date.now();
   //debugging loader
   const timestart = Date.now();
 
