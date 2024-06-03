@@ -82,7 +82,7 @@ gsap.to(".char", {
     trigger: "#text",
     start: "bottom 30%",
     scrub: true,
-    markers: true,
+    // markers: true,
   },
   y: 480,
   stagger: 0.01,
