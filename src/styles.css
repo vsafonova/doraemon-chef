@@ -200,7 +200,7 @@ body {
 }
 
 .bg_beige {
-  background-color: #FCF3E1;
+  background-color: #fcf3e1;
 }
 
 .bg_white.second {
@@ -260,6 +260,7 @@ body {
 }
 
 .third_container--image {
+  /* width: 400px; */
   background-color: rgb(246, 240, 210);
   display: flex;
   align-items: end;
@@ -325,25 +326,49 @@ h1 {
 }
 /* -------------------------------- */
 
-section .fourth {
-  display: grid;
-  place-content: center;
-  height: 100vh;
+.fourth {
+  display: flex;
+  flex-direction: column;
 }
 
+.animated-yellow-text__container {
+  display: grid;
+  place-content: center;
+  height: 90vh;
+  width: 1440px;
+}
+
+.animated-yellow-text__paragraph-eng {
+  color: #515151;
+  font-size: 0.7rem;
+  width: 40%;
+  text-align: center;
+}
+
+.line {
+  margin: 0 auto;
+  /* width: 1200px !important; */
+  /* width: 100%; */
+  text-align: center !important;
+}
+
+.word {
+  width: 100%;
+  letter-spacing: 0.5rem;
+}
 
 #text {
-  margin: 0 auto;
-  width: 800px;
-  font-size: 7rem;
+  width: 1440px !important;
+  font-size: 4rem;
   text-transform: uppercase;
-
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-  line-height: 5.9rem;
+
+  line-height: 8rem;
 }
 
 .char {
   transform: translateY(580px);
+  /* transform: translateX(800px); */
   transition: transform 0.5s;
 }
 
@@ -378,6 +403,11 @@ section .fourth {
 }
 
 .footer {
+  /* display: fixed;
+  bottom: 0;
+  right: 0;
+  left: 0; */
+
   width: 100%;
   padding: 2rem;
   font-size: 2rem;
@@ -399,5 +429,33 @@ section .fourth {
 .footer__small-text {
   width: 500px;
   font-weight: 200;
-  font-size: 0.5rem;
+  font-size: 0.8rem;
+}
+
+/* ------------------------------- */
+.sixth {
+  display: block;
+  height: screen;
+  width: 100%;
+}
+.animated-text__container {
+  height: 600px;
+}
+.animated-text {
+  width: 390px;
+  padding: 50px 60px 50px 80px;
+  border-radius: 50%;
+  border: 2px solid black;
+  background-color: #fff;
+
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  left: -400px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+
+  font-weight: 700;
+}
+.spacer {
+  height: 100vh;
 }
