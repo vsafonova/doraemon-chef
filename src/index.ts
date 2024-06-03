@@ -226,22 +226,22 @@ async function setupViewer() {
         end: "top top",
       },
     });
-    const duration = 3.5;
-    const delay = -3;
+    const duration = 2;
+    const delay =  -1.9;
     const ease = "sine.in";
     bestTl
       .from(".best_slider-one", {
-        x: -1 * 1300,
+        x: -1 * window.innerWidth,
         duration,
         ease,
       })
       .from(".best_slider-two", {
         x: window.innerWidth,
-        duration: duration * 2,
+        duration,
         delay,
         ease,
       })
-      .from(".best_slider-three", { x: -1 * 1300, duration, delay, ease });
+      .from(".best_slider-three", { x: -1 *  window.innerWidth, duration, delay, ease });
   }
 
   setupScrollanimation();
