@@ -101,6 +101,7 @@ body {
 .section__one_top {
   display: flex;
   flex-direction: column;
+  margin-top: 60px;
 }
 
 .section__one__title {
