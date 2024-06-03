@@ -101,6 +101,7 @@ body {
 .section__one_top {
   display: flex;
   flex-direction: column;
+  margin-top: 60px;
 }
 
 .section__one__title {
@@ -310,7 +311,7 @@ h1 {
 .slider {
   display: flex;
   justify-content: space-between;
-  width: 30vw;
+  width: 33vw;
   margin: 1rem;
   padding: 1rem;
   border-radius: 10px;
@@ -321,6 +322,21 @@ h1 {
   display: block;
   width: 40%;
 }
+
+.slider_image {
+  max-width: auto;
+  height: auto;   
+ 
+
+
+}
+@media(max-width:1400px) {
+  .slider {
+    width: 50vw;
+  }
+}
+
+
 
 #webgi-canvas-container {
   width: 100vw;
