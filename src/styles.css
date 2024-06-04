@@ -241,12 +241,29 @@ body {
   top: 0;
 }
 
-#chefMotion h2 {
+.chef-bottom--text {
+  display: flex;
+  gap: 40rem;
+  position: absolute;
+  text-transform: uppercase;
+  font-weight: 900;
+  font-size: 2rem;
+  left: 0;
+  bottom: 0;
+  margin-bottom: 2rem;
+  margin-left: 2rem;
+  width: 100%;
+
+}
+
+#chefMotion h2, 
+#animated-section-2{
   transform: translate(-50%, 0%);
   transition: all 1s ease-out;
 }
 
-#chefMotion.animation h2 {
+#chefMotion.animation h2, 
+#animated-section-2.animation{
   transform: translate(0%, 0%);
 }
 

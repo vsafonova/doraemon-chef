@@ -5,7 +5,7 @@ let windowHeight = Math.max(
   lastTop;
 
 window.addEventListener("scroll", function (event) {
-  let animation = document.getElementById("chefMotion"),
+  let animation = document.getElementById("animated-section-2"),
     top = animation.getBoundingClientRect().top,
     offset = top - windowHeight;
 
