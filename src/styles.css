@@ -319,7 +319,7 @@ h1 {
   font-weight: normal;
 }
 .slider_container {
-  padding-top: 80px;
+  padding-top: 40px;
 
   display: flex;
   flex-direction: column;
@@ -328,6 +328,7 @@ h1 {
 }
 .best_slider_title {
   margin-bottom: 0.5rem;
+  text-transform: uppercase;
 }
 
 .slider {
