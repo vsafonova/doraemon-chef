@@ -5,7 +5,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const updateYPercent = () => {
   const viewportHeight = window.innerHeight;
-  const yPercentValue = -(viewportHeight / 5.8);
+  const yPercentValue = -(viewportHeight / 6.6);
 
   gsap.to('.section__last-img', {
     yPercent: yPercentValue,
