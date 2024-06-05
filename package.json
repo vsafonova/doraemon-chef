@@ -1,12 +1,10 @@
 {
-  "name": "threejs-gsap-webgi-course",
+  "name": "doraemon",
   "version": "1.0.0",
-  "description": "WebGi + TypeScript example starter project",
+  "description": "Educational project for the module exploring code, Hyper Island",
   "main": "index.html",
   "author": {
-    "name": "",
-    "email": "andersonmancini30@gmail.com",
-    "url": "https://twitter.com/Andersonmancini/"
+    "name": "team 1"
   },
   "scripts": {
     "start": "parcel index.html",
