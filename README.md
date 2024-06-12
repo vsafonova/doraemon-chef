@@ -16,7 +16,7 @@ Create immersive web experiences using technologies such as Web Audio API, Canva
 
 ## Tools and stack:
 
-- HTML / CSS / Vanilla JavaScript/ TypeScript / GSAP / SplitType
+- HTML / CSS / Vanilla JavaScript/ TypeScript / GSAP / SplitType / 2D/3D graphics in the browser
 
 ## Project link:
 
