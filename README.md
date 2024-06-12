@@ -25,3 +25,28 @@ Create immersive web experiences using technologies such as Web Audio API, Canva
 ## Third-party libraries:
 * GSAP JavaScript library for animations: [GSAP](https://gsap.com)
 * SplitType JavaScript library that splits HTML text into elements so that lines, words, and characters can be animated independently: [SplitType](https://www.npmjs.com/package/split-type/v/0.2.1)
+
+## Project Setup Instructions:
+To set up this project locally, follow the steps below:
+
+### To open the website locally:
+
+1. **Clone the Repository:**
+
+    ```bash
+    https://github.com/hyper-island-exploring-code-project/doraemon.git
+    ```
+
+2. **Install dependencies:**
+
+    ```bash
+    npm install
+    ```
+3. **Running the website:**
+
+    ```bash
+    npm start
+    ```    
+
+4. **Open website locally**
+
