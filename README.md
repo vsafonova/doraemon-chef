@@ -2,6 +2,8 @@
 
 A unique family pancake restaurant with our main chef, Doraemon.
 
+***The website needs to be accessible because now it works only on the desktop version.***
+
 ## Project Brief
 Create immersive web experiences using technologies such as Web Audio API, Canvas 2D/3D graphics, Three.js, WebVR/AR, and sensors/geolocation.
 
